@@ -1,5 +1,27 @@
 #grid {
   width: fit-content;
+
+  &.cleared {
+    background: linear-gradient(
+        to right,
+        #f00 0%,
+        #f80 14.28%,
+        #dd0 28.56%,
+        #0d0 42.85%,
+        #0dd 57.14%,
+        #00f 71.42%,
+        #e0e 85.71%,
+        #f00 100%
+      )
+      0% center / 200% auto;
+    animation: rainbow-background 4s linear infinite;
+  }
+  @keyframes rainbow-background {
+    to {
+      background-position-x: 200%;
+    }
+  }
+
   .row {
     display: flex;
 
@@ -11,7 +33,7 @@
       background-color: crimson;
       &.active {
         background-image: url(./sisisin.png);
-        background-color: white;
+        background-color: transparent;
       }
     }
   }

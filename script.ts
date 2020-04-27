@@ -24,6 +24,7 @@ const createRandomStatus = () => {
 
 const initGrid = () => {
   document.getElementById("grid").innerHTML = "";
+  document.getElementById("grid").className = "";
   initStatus();
   const length = getLength();
   const grid = document.getElementById("grid");
@@ -86,13 +87,13 @@ const updateGrid = (square: HTMLDivElement) => {
 };
 
 const isClear = () => {
-  gridStatus.forEach((row) => {
-    row.forEach((square) => {
+  for (const row of gridStatus) {
+    for (const square of row) {
       if (square == false) {
         return;
       }
-    });
-  });
+    }
+  }
 
   document.getElementById("grid").classList.add("cleared");
 };
