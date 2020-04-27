@@ -5,11 +5,12 @@
     .square {
       width: 50px;
       height: 50px;
-      background-color: darkgray;
+      background-size: contain;
       margin: 1px;
-
+      background-color: crimson;
       &.active {
-        background-color: crimson;
+        background-image: url(./sisisin.png);
+        background-color: white;
       }
     }
   }
