@@ -1,4 +1,4 @@
-let gridStatus = [];
+let gridStatus: boolean[][] = [];
 
 window.onload = () => {
   document.getElementById("submit").addEventListener("click", initGrid);
@@ -81,6 +81,20 @@ const updateGrid = (square: HTMLDivElement) => {
     const s = getSquare(r, c);
     update(r, c, s);
   }
+
+  isClear();
+};
+
+const isClear = () => {
+  gridStatus.forEach((row) => {
+    row.forEach((square) => {
+      if (square == false) {
+        return;
+      }
+    });
+  });
+
+  document.getElementById("grid").classList.add("cleared");
 };
 
 const getLength = () =>
